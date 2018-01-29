@@ -1,0 +1,11 @@
+Public WithEvents objReminders As Outlook.Reminders
+
+Private Sub Application_Startup()
+    Set objReminders = Application.Reminders
+End Sub
+
+Private Sub objReminders_ReminderFire(ByVal ReminderObject As Reminder)
+    Cmd = "C:\Python27\python.exe" & " " & "C:\Utilities\woot.py"
+    Call Shell(Cmd, vbHide)
+End Sub
+
